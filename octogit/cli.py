@@ -114,6 +114,8 @@ def begin():
             description = args.get(2) or ''
             organization = args.get(3)
             create_repository(project_name, description, organization=organization)
+            print "git remote add origin git@github.com:Psycojoker/%s.git" % (project_name)
+            print "git push -u origin master"
             sys.exit()
 
     elif args.flags.contains(('--issues', '-i')) or args.get(0) == 'issues':
